@@ -14,7 +14,6 @@ module OmniAuth
         :http_method        => 'get',
       }
 
-      #uid { access_token.params['user_id'] }
       uid { raw_info['id'] }
 
       info do
@@ -34,9 +33,6 @@ module OmniAuth
 
       def raw_info
         @raw_info ||= MultiJson.decode(access_token.get('/v2/people/@me/@self?format=json').body)['entry']
-        p "RAWINFO"
-        p @raw_info
-        @raw_info
       end
     end
   end
