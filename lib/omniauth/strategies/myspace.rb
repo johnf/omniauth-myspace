@@ -12,6 +12,7 @@ module OmniAuth
         :access_token_path  => '/access_token',
         :request_token_path => '/request_token',
         :http_method        => 'get',
+        :scheme             => :query_string,
       }
 
       uid { raw_info['id'] }
